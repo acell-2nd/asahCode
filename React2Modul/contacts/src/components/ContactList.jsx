@@ -16,4 +16,16 @@ return (
     </div>
 )
 }
+
+ContactList.propTypes = {
+    contacts: PropTypes.arrayOf(
+        PropTypes.exact({
+            id: PropTypes.number.isRequired,
+            nama: PropTypes.string.isRequired,
+            username: PropTypes.string.isRequired
+        })
+    ).isRequired,
+    delateContact: PropTypes.func.isRequired
+};
+
 export default ContactList;

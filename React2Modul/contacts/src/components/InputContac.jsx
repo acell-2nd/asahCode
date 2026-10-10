@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 class InputContac extends React.Component {
     constructor(props) {
         super(props);
@@ -32,4 +33,9 @@ class InputContac extends React.Component {
         )
 }
 }
+InputContac.propTypes = {
+    addContactHandler: PropTypes.func.isRequired
+}
+
+
 export default InputContac;
