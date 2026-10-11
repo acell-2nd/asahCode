@@ -1,14 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
-function DelateContact({ delateContact, id }) {
+import Joi from "joi";
+import validationProps from "../utils/validation";
+const delateContactPropsSchema = Joi.object({
+    delateContact: Joi.func().required(),
+    id: Joi.number().required()
+});
+function DelateContact(props) {
+    const { delateContact, id } = validationProps(delateContactPropsSchema, props, "DelateContact");
+    
     return (
         <div className="delate__Contact">
             <button onClick={() => delateContact(id)}>X</button>
         </div>
     )
 }
-DelateContact.propTypes = {
-    delateContact: PropTypes.func.isRequired,
-    id: PropTypes.number.isRequired
-}
+
 export default DelateContact;

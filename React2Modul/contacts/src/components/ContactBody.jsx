@@ -1,6 +1,13 @@
 import React from "react";
-import PropTypes from "prop-types";
-function ContactBody({ nama, username }) {
+import Joi from "joi";
+import validationProps from "../utils/validation";
+const contactBodyPropsSchema = Joi.object({
+    nama: Joi.string().required(),
+    username: Joi.string().required()
+});
+
+function ContactBody(props) {
+    const { nama, username } = validationProps(contactBodyPropsSchema, props, "ContactBody");
     return (
         <div className="body__Profile">
             <h3>{nama}</h3>
@@ -9,8 +16,5 @@ function ContactBody({ nama, username }) {
     )
 }
 
-ContactBody.propTypes = {
-    nama: PropTypes.string.isRequired,
-    username: PropTypes.string.isRequired
-}
+
 export default ContactBody;

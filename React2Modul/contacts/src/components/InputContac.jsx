@@ -1,11 +1,20 @@
 import React from "react";
-import PropTypes from "prop-types";
+import Joi from "joi";
+import validationProps from "../utils/validation";
+const contacInputPropsSchema = Joi.object(
+    {
+        addContactHandler : Joi.func().required()
+    }
+)
 class InputContac extends React.Component {
     constructor(props) {
         super(props);
+        const validateProps = validationProps(contacInputPropsSchema, props, "InputContact");
+
         this.state = {
             nama: "",
-            username: ""
+            username: "",
+            validateProps
         };
         this.onNameChangeEv = this.onNameChangeEv.bind(this);
         this.onUsernameChangeEv = this.onUsernameChangeEv.bind(this);
@@ -19,7 +28,8 @@ class InputContac extends React.Component {
     }
     onSubmitEv = (event) => {
         event.preventDefault();
-        this.props.addContactHandler(this.state);
+    const {addContactHandler} = this.state.validateProps;
+    addContactHandler(this.state);
     }
     render() {
         return(
@@ -33,9 +43,7 @@ class InputContac extends React.Component {
         )
 }
 }
-InputContac.propTypes = {
-    addContactHandler: PropTypes.func.isRequired
-}
+
 
 
 export default InputContac;
