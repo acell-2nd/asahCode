@@ -30,11 +30,12 @@ class InputContac extends React.Component {
         event.preventDefault();
     const {addContactHandler} = this.state.validateProps;
     addContactHandler(this.state);
+    this.setState({ nama: "", username: "" });
     }
     render() {
         return(
-            <div className="input__Contact">
-                <form className="contact__Input" onSubmit={this.onSubmitEv}>
+            <div className="input__Container">
+                <form className="contact__Form" onSubmit={this.onSubmitEv}>
                     <input type="text" placeholder="Nama" id="nama" value={this.state.nama} onChange={this.onNameChangeEv} />
                     <input type="text" placeholder="Username" id="username" value={this.state.username} onChange={this.onUsernameChangeEv} />
                     <button type="submit">Add Contact</button>

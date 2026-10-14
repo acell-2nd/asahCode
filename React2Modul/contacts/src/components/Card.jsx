@@ -28,7 +28,7 @@ class Card extends React.Component {
     render() {
         return (
             <div className="card__Container">
-                <h1>Contact List</h1>
+                <h1>Contact Form</h1>
                 <InputContac addContactHandler={this.onAddContact} />
                 <ContactList contacts={this.state.contacts} delateContact={this.onDelateContact} />
                 

@@ -13,14 +13,17 @@ body::-webkit-scrollbar{
 #root{
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 2rem 0;
 }
 .card__Container{
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    margin: auto;
     width: 1000px;
-    height: 600px;
+    height: fit-content;
     padding: 2rem;
     gap: 20px;
     background-color: #f5f5f5;
@@ -29,7 +32,7 @@ body::-webkit-scrollbar{
 }
 .contact__Item{
     position: relative;
-  
+    
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -39,6 +42,7 @@ body::-webkit-scrollbar{
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 } 
 .contact__List{
+    min-width: 100%;
     display: flex;
     flex-direction: column;
     gap: 1rem;  
@@ -58,6 +62,33 @@ body::-webkit-scrollbar{
     transform: translateY(-50%);
     padding: 0.5rem 1rem;
     background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.contact__Form{
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    min-width: 100%;
+}
+.input__Container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-width: 100%;
+}
+input[type="text"]{
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    outline: none;
+}
+button[type="submit"]{
+    padding: 0.5rem 1rem;
+    background-color: #4CAF50;
     color: #fff;
     border: none;
     border-radius: 0.5rem;
