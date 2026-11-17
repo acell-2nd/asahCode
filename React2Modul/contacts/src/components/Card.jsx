@@ -2,6 +2,8 @@ import React from "react";
 import ContactList from "./ContactList";
 import contact from "../utils/data.js";
 import InputContac from "./InputContac.jsx";
+import Navbar from "./Navbar.jsx";
+import { Route, Routes } from "react-router-dom";
 class Card extends React.Component {
     constructor(props) {
         super(props);
@@ -29,8 +31,11 @@ class Card extends React.Component {
         return (
             <div className="card__Container">
                 <h1>Contact Form</h1>
-                <InputContac addContactHandler={this.onAddContact} />
-                <ContactList contacts={this.state.contacts} delateContact={this.onDelateContact} />
+                <Navbar />
+                <Routes>
+                    <Route path="/add" element={<InputContac addContactHandler={this.onAddContact} />} />
+                    <Route path="/" element={<ContactList contacts={this.state.contacts} delateContact={this.onDelateContact} />} />
+                </Routes>
                 
             </div>
         )

@@ -2,7 +2,12 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import Card from "./components/Card";
 import "./assets/style.css";
+import { BrowserRouter } from "react-router-dom";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
-root.render(<Card />);
+root.render(
+    <BrowserRouter>
+  <Card />
+  </BrowserRouter>
+);

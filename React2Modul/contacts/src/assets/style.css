@@ -94,4 +94,27 @@ button[type="submit"]{
     border-radius: 0.5rem;
     cursor: pointer;
 }
+.navbar{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 1rem;
+    
+}
+.navbar ul{
+    width: fit-content;
+    display: flex;
+    gap: 1rem;
+   
+}
+.navbar li{
+    list-style: none;
+}
+.icon__Home, .icon__Add{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    color: black;
+}
 

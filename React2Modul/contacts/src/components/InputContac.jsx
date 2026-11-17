@@ -34,6 +34,7 @@ class InputContac extends React.Component {
     }
     render() {
         return(
+            
             <div className="input__Container">
                 <form className="contact__Form" onSubmit={this.onSubmitEv}>
                     <input type="text" placeholder="Nama" id="nama" value={this.state.nama} onChange={this.onNameChangeEv} />
